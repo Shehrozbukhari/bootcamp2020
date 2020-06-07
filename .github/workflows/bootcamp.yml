@@ -1,0 +1,22 @@
+name: Bootcamp assignment 1
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: installing the node
+      run: actions/setup-node@v2-beta
+      with:
+        node-version: 12
+# deploying the surge
+    - name: intalling the surge
+      run: npm install -g surge
+    - name: deploying the surge
+      run: surge ./ http://bootcampassign1.surge.sh/ --token $ {{ SURGE }}
