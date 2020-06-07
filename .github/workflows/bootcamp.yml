@@ -19,4 +19,4 @@ jobs:
     - name: intalling the surge
       run: npm install -g surge
     - name: deploying the surge
-      run: surge ./ http://bootcampassign1.surge.sh/ --token $ {{ SURGE }}
+      run: surge ./ http://bootcampassign1.surge.sh/ --token $ {{ secrets.SURGE }}
